@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="white">#FFFFFF</color>
+
+    <color name="xwhite">#FFFFFFFF</color>
+
+    <color name="black">#000000</color>
+
+    <color name="xblack">#FF000000</color>
+    <!-- volley image load color -->
+    <color name="image_load">#DDDDDD</color>
+    <color name="image_error">#666666</color>
+    <!--  -->
+
+    <color name="money">#FF6600</color>
+    <color name="common_select_money">#ffff9d77</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="common_blue">#ff82b1ce</color>
+    <color name="common_bg_white">#FFFFFF</color>
+
+    <color name="common_bg_red">#ffff0315</color>
+
+    <color name="common_bg_gray">#ff808080</color>
+
+    <color name="common_btn_bg_normal">#ff6dce77</color>
+    <color name="common_btn_bg_press">#ff0bce03</color>
+
+    <color name="common_saling">#ff4aa0ce</color>
+
+    <color name="common_orange">#FF6600</color>
+
+    <color name="gray_normal">#666667</color>
+</resources>
