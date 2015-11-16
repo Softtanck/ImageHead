@@ -3,22 +3,18 @@ package com.softtanck.imagehead;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
-
-import com.softtanck.imagehead.utils.CameraHelper;
 
 import java.io.File;
 
@@ -122,12 +118,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("Tanck", "requestCode:" + requestCode + "----" + "resultCode:" + resultCode);
 
         //响应成功
-        if (MainActivity.RESULT_OK != resultCode)
+        if (MainActivity.RESULT_OK != resultCode && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP_MR1)
             return;
+
 
         switch (requestCode) {
 
             case IMG_OPTION:// option
+                //5.0+兼容
+                if (null == data)
+                    return;
                 int code = data.getIntExtra(SelectPicPopupWindow.IMG_KEY, 0);
                 switch (code) {
                     case SelectPicPopupWindow.TAKE_PHONE: // 照相机
@@ -151,10 +151,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case PHOTO_REQUEST_CUT:
                 Bitmap head = data.getParcelableExtra("data");
                 Log.d("Tanck", "head:" + head);
+                if (null == head)
+                    return;
                 mHead.setImageBitmap(head);
                 break;
 
             case GALLERY_REQUEST_CODE:
+                //5.0+兼容
+                if (null == data)
+                    return;
                 Uri galleryUri = data.getData();
                 startPhotoZoom(galleryUri);
                 break;
