@@ -6,3 +6,5 @@ a simple for upload headImg from camera or gallery.
 <br>
 
 ![image](https://github.com/q422013/ImageHead/blob/master/test.gif)
+
+
