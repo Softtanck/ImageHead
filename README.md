@@ -8,3 +8,5 @@ a simple for upload headImg from camera or gallery.
 ![image](https://github.com/q422013/ImageHead/blob/master/test.gif)
 
 
+
+
